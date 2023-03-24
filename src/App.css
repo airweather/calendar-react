@@ -1,0 +1,15 @@
+#write {
+  color: black;
+  text-decoration: none;
+  background-color: #ccc;
+  margin: 3px;
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}

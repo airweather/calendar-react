@@ -1,0 +1,10 @@
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* grid-template-rows: 40px; */
+  grid-gap: 1px;
+}
+
+.dateText {
+  color: "red";
+}
