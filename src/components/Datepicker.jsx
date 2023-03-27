@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-const Picker = () => {
+const Datepicker = () => {
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const [date, setDate] = useState({
     year: new Date().getFullYear(), // 현재 연도
@@ -128,8 +128,6 @@ const Picker = () => {
             </DateBox> // 각 요일을 리스트 아이템으로 렌더링
           ))}
         </DatepickerContainer>
-
-        <h3>Time Picker</h3>
       </div>
     </>
   );
@@ -156,4 +154,4 @@ const DateBox = styled.div`
   }
 `;
 
-export default Picker;
+export default Datepicker;

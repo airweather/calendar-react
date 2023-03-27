@@ -4,8 +4,9 @@ import "./App.css";
 // import Board from './components/Board'
 import Calendar from "./components/Calendar";
 // import Write from './components/Write'
-import Picker from "./components/Picker";
+import Datepicker from "./components/Datepicker";
 import Dropzone from "./components/Dropzone";
+import Timepicker from "./components/Timepicker";
 // import Data from './data/db.json'
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
       <Board data={data} />
       <Write />  */}
       {/* <Calendar /> */}
-      <Picker />
+      <Datepicker />
+      <Timepicker />
       <Dropzone />
     </>
   );
