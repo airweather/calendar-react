@@ -13,6 +13,17 @@ const Timepicker = () => {
     setMinutes(e.target.value);
   }
 
+  const date = new Date();
+
+  const a = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+    hours,
+    minutes
+  );
+  console.log(a);
+
   return (
     <>
       <h3>Time Picker</h3>
@@ -63,13 +74,20 @@ const TimepickerContainer = styled.div`
   }
   input[type="range"] {
     appearance: none;
-    cursor: pointer;
     accent-color: #888;
-    background-color: #ccc;
     border-radius: 15px;
     border: 1px solid #000;
-    height: 5px;
-    background: transparent;
+    height: 1px;
+    margin: 5px;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    cursor: pointer;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    background-color: #fff;
   }
 `;
 

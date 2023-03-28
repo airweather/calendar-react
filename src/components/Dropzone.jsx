@@ -31,10 +31,26 @@ const Dropzone = () => {
     setFileArr(newFileArr); // newFileArr을 setFileArr 함수를 통해 업데이트
   };
 
+  // const videoThumbnailExtractor = (file) => {
+  //   console.log("videoThumbnailExtractor");
+  //   const video = document.createElement("video");
+  //   video.preload = "metadata";
+  //   video.onloadedmetadata = function () {
+  //     URL.revokeObjectURL(video.src);
+  //     const canvas = document.createElement("canvas");
+  //     canvas.width = video.videoWidth;
+  //     canvas.height = video.videoHeight;
+  //     canvas
+  //       .getContext("2d")
+  //       .drawImage(video, 0, 0, canvas.width, canvas.height);
+  //     const thumbnail = canvas.toDataURL("image/png");
+  //     // console.log(thumbnail);
+  //   };
+  //   video.src = URL.createObjectURL(file);
+  // };
+
   return (
     <>
-      {/* <p>{fileContent}</p> */}
-
       <DropzoneContainer
         onDrop={handleDrop} // 드롭 이벤트 핸들러 등록
         onDragOver={handleDragOver} // 드래그 오버 이벤트 핸들러 등록
@@ -76,13 +92,9 @@ const Dropzone = () => {
                   X
                 </b>
               </div>
-              <div
-                style={{
-                  width: "90%",
-                  height: "5px",
-                  backgroundColor: "lightblue",
-                }}
-              ></div>
+              <UploadProgressContainer>
+                <UploadProgressBar></UploadProgressBar>
+              </UploadProgressContainer>
             </div>
           );
         })}
@@ -93,7 +105,7 @@ const Dropzone = () => {
 
 const DropzoneContainer = styled.div`
   width: 400px;
-  height: 200px;
+  height: 500px;
   background-color: pink;
   overflow-y: scroll;
 `;
@@ -102,6 +114,18 @@ const DropzoneArea = styled.div`
   width: 700px;
   height: 50px;
   background-color: #fff;
+`;
+
+const UploadProgressContainer = styled.div`
+  width: 90%;
+  height: 5px;
+  background-color: #888;
+`;
+
+const UploadProgressBar = styled.div`
+  width: 60%;
+  height: 5px;
+  background-color: lightblue;
 `;
 
 export default Dropzone;
